@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменить организацию</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/organizations/{id}(id=${organization.getId()})}" th:object="${organization}">
+    <label for="name">Enter name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Ошибка имени</div>
+    <input type="submit" value="Update!">
+</form>
+
+</body>
+</html>

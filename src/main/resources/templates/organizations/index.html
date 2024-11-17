@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Organizations</title>
+</head>
+<body>
+
+<div th:each="organization : ${organizations}">
+    <a th:href="@{/organizations/{id}(id=${organization.getId()})}"
+       th:text="${organization.getName()}">user</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/organizations/new">Создать новую организацию</a>
+
+</body>
+</html>
